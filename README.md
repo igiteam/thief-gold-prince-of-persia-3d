@@ -31,6 +31,7 @@ A total conversion project that fuses the stealth-driven shadow gameplay and imm
 - [https://www.moddb.com/games/thief-the-dark-project/mods](https://www.moddb.com/games/thief-the-dark-project/mods)
 - [https://dromed.whoopdedo.org](https://dromed.whoopdedo.org)
 - [https://thief-thecircle.com](https://thief-thecircle.com)
+- [https://www.moddb.com/games/thief-the-dark-project/downloads/dromed](https://www.moddb.com/games/thief-the-dark-project/downloads/dromed)
 - [https://www.moddb.com/games/thief-the-dark-project/addons](https://www.moddb.com/games/thief-the-dark-project/addons)
 - [https://ttlg.com/forums/showthread.php?t=114292&page=1](https://ttlg.com/forums/showthread.php?t=114292&page=1)
 - [http://www.thief-thecircle.com/media/patches/](http://www.thief-thecircle.com/media/patches/)
@@ -43,8 +44,19 @@ A total conversion project that fuses the stealth-driven shadow gameplay and imm
 - [https://www.moddb.com/games/thief-the-dark-project/downloads/jolly-thief-toolkit-v1](https://www.moddb.com/games/thief-the-dark-project/downloads/jolly-thief-toolkit-v1)
 - [https://www.moddb.com/mods/tfix/downloads/tfix-127b](https://www.moddb.com/mods/tfix/downloads/tfix-127b)
 - [https://www.thiefguild.com/fanmissions/?games=5](https://www.thiefguild.com/fanmissions/?games=5)
+- [https://www.ttlg.de/index.php?article/15-komag-tut-vt2/](https://www.ttlg.de/index.php?article/15-komag-tut-vt2/)
 - [https://next.nexusmods.com/games/thiefthedarkproject](https://next.nexusmods.com/games/thiefthedarkproject)
+- [https://thiefmissions.com/search.cgi?search=&sort=release&limit=20#m](https://thiefmissions.com/search.cgi?search=&sort=release&limit=20#m)
 - [https://gamebanana.com/tuts/games/19371](https://gamebanana.com/tuts/games/19371)
+- [https://nickdablin.wordpress.com/absolute-beginners-guide-to-creating-a-mission-for-thief-2](https://nickdablin.wordpress.com/absolute-beginners-guide-to-creating-a-mission-for-thief-2/)
+- [https://nickdablin.wordpress.com/how-to-play-thief-fan-missions/#thief-gold-installation-and-setup](https://nickdablin.wordpress.com/how-to-play-thief-fan-missions/#thief-gold-installation-and-setup)
+- [https://nickdablin.wordpress.com/dromed-tutorials/](https://nickdablin.wordpress.com/dromed-tutorials/)
+- [http://www.thief-thecircle.com/teg-old/guides/official/tutor.asp](http://www.thief-thecircle.com/teg-old/guides/official/tutor.asp)
+- [https://nickdablin.wordpress.com/how-to-play-thief-fan-missions/](https://nickdablin.wordpress.com/how-to-play-thief-fan-missions/)
+- [https://thief.starforge.co.uk/wiki/Tutorials:Contents](https://thief.starforge.co.uk/wiki/Tutorials:Contents)
+- [https://thiefmissions.com/tutorials/Spike14CompleteTut.html](https://thiefmissions.com/tutorials/Spike14CompleteTut.html)
+- [https://www.ttlg.de/index.php?article-list/](https://www.ttlg.de/index.php?article-list/)
+- [A beginner's guide for Thief 1: The Dark Project Classic](https://steamcommunity.com/sharedfiles/filedetails/?id=2731118621)
  
 ## Dev Environment
 
