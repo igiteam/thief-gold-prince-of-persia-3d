@@ -57,6 +57,8 @@ A total conversion project that fuses the stealth-driven shadow gameplay and imm
 - [https://thiefmissions.com/tutorials/Spike14CompleteTut.html](https://thiefmissions.com/tutorials/Spike14CompleteTut.html)
 - [https://www.ttlg.de/index.php?article-list/](https://www.ttlg.de/index.php?article-list/)
 - [A beginner's guide for Thief 1: The Dark Project Classic](https://steamcommunity.com/sharedfiles/filedetails/?id=2731118621)
+- [https://thief.starforge.co.uk/images/5/56/Tutorials_SalvagesDromedMapsTutorialV2.pdf](https://thief.starforge.co.uk/images/5/56/Tutorials_SalvagesDromedMapsTutorialV2.pdf)
+- [https://www.ign.com/articles/2006/09/05/thief-ii-the-metal-age-dromed-faq-374813](https://www.ign.com/articles/2006/09/05/thief-ii-the-metal-age-dromed-faq-374813)
  
 ## Dev Environment
 
