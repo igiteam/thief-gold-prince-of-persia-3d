@@ -62,10 +62,8 @@ A total conversion project that fuses the stealth-driven shadow gameplay and imm
 ---
 
 
-=============================================================================
-Jun 25, 2021
-Making a Profit
-=============================================================================
+
+## Thief Gold - Making a Profit mod source code
 
 Author                  : vfig (Andy Durdin)
 Contact Info            : me@andy.durdin.net
@@ -95,7 +93,8 @@ Whatever else this job entails, visiting Newbridge will be an interesting
 change of scene. I'll go along and meet Argaux by the fountain, and hear
 what he has to say.
 
-=============================================================================
+---
+
 * Summary *
 
 Game                    : Thief Gold, NewDark 1.26
@@ -111,7 +110,8 @@ New Sounds              : Yes
 Multi-Language Support  : Yes (English, French, German, Italian, Russian)
 Build Time              : 670 Dromed hours / 150 days
 
-=============================================================================
+---
+
 * Installation *
 
 The NewDark 1.26 patch or later is required to run this mission. The GOG
@@ -146,7 +146,8 @@ NewDark distribution for more information on using FMSel.
 If you prefer a different mission loader, such as NewDarkLoader, then you
 already know what to do.
 
-=============================================================================
+---
+
 * Configuration *
 
 The 'new mantle' feature in NewDark makes climbing easier and significantly
@@ -162,7 +163,8 @@ new_mantle
 Note that changes made to USER.CFG will take effect for the entire game and
 all fan missions.
 
-=============================================================================
+---
+
 * Languages and Subtitles *
 
 This mission contains subtitles for all its new dialog. To enable them, edit
@@ -200,7 +202,8 @@ language italian+english
 Note that changes made to INSTALL.CFG and USER.CFG will take effect for the
 entire game and all fan missions.
 
-=============================================================================
+---
+
 * Distant Buildings *
 
 This mission is quite aggressive on view distances, as the hilltop and some
@@ -211,7 +214,8 @@ bothers you, find and disable the 'wr_render_zcomp' setting in CAM_EXT.CFG.
 Note that changes made to CAM_EXT.CFG will take effect for the entire game
 and all fan missions.
 
-=============================================================================
+---
+
 * Credits *
 
 Created by              : vfig (Andy Durdin)
@@ -280,7 +284,8 @@ my hands dirty with Dromed.
 To all you taffers out there, on TTLG and beyond, who have kept Thief
 alive for the past twenty years!
 
-=============================================================================
+---
+
 * Version history *
 
 Jun 25, 2021 (1.2):
@@ -321,7 +326,7 @@ Nov 27, 2018 (1.0):
 
 Initial release.
 
-=============================================================================
+---
 * Copyright Notice *
 
 This mission is ©2018-2021 by Andy Durdin.
