@@ -1,4 +1,30 @@
-﻿=============================================================================
+# thief-gold-prince-of-persia-3d
+## Thief Gold: Prince of Persia 3D — The Remake
+A total conversion project that fuses the stealth-driven shadow gameplay and immersive-sim systems of *Thief Gold* with the acrobatic platforming, trap-laden level design, and atmospheric world of *Prince of Persia 3D* (1999), rebuilt as a standalone remake.
+
+## Github Treeview
+[https://treegit.macosxjs.com/?url=igiteam/thief-gold-prince-of-persia-3d
+](https://treegit.macosxjs.com/?url=igiteam/thief-gold-prince-of-persia-3d)
+
+## Github Tree Api Direct JSON
+[https://api.github.com/repos/igiteam/thief-gold-prince-of-persia-3d/git/trees/main?recursive=1
+](https://api.github.com/repos/igiteam/thief-gold-prince-of-persia-3d/git/trees/main?recursive=1)
+
+## Prince Of Persia 3d - the base of the gameplay
+[![Watch the video](https://img.youtube.com/vi/ly859IV5gZA/hqdefault.jpg)](https://www.youtube.com/watch?v=ly859IV5gZA&list=PLb8oNKiUbnjFGRpy3A4vm7XLXu5yo-xZE&index=13)
+
+[![Thief Gold](https://raw.githubusercontent.com/igiteam/thief-gold-prince-of-persia-3d/refs/heads/master/thief-gold-box.png)](https://archive.org/details/ThiefGoldUSA)
+[![Prince Of Persia](https://raw.githubusercontent.com/igiteam/thief-gold-prince-of-persia-3d/refs/heads/master/prince-of-persia-3d-box.png)](https://archive.org/details/prince-of-persia-3-d-definitive-edition)
+[![Prince Of Persia](https://raw.githubusercontent.com/igiteam/thief-gold-prince-of-persia-3d/refs/heads/master/thief-gold-prince-of-persia-3d-ingame.png)](https://archive.org/details/Prince_of_Persia_3D_USA)
+
+
+## WS11WineCX20.0.4 (MacOSX Big Sur 32bit)
+[WS11WineCX20.0.4.tar.7z](https://github.com/vitor251093/porting-kit-engines/releases/download/wineskin/WS11WineCX20.0.4.tar.7z)
+
+[![wine windows games on macosx](https://raw.githubusercontent.com/igiteam/igi1-macbook-3d-workstation/refs/heads/main/wine-engine-config.png)](https://github.com/igiteam/wine_engines)
+
+
+=============================================================================
  Jun 25, 2021
  Making a Profit
 =============================================================================
