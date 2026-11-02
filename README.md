@@ -23,6 +23,8 @@ A total conversion project that fuses the stealth-driven shadow gameplay and imm
 
 [![Thief Gold](https://raw.githubusercontent.com/igiteam/thief-gold-prince-of-persia-3d/refs/heads/master/thief-gold-box.png)](https://archive.org/details/ThiefGoldUSA)
 
+[![Thief Gold](https://raw.githubusercontent.com/igiteam/thief-gold-prince-of-persia-3d/refs/heads/master/thief_boxart.jpg)](https://archive.org/details/thief-src-libs)
+
 [![Prince of Persia 3D](https://raw.githubusercontent.com/igiteam/thief-gold-prince-of-persia-3d/refs/heads/master/prince-of-persia-3d-box.png)](https://archive.org/details/prince-of-persia-3-d-definitive-edition)
 
 ---
