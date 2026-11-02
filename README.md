@@ -11,8 +11,6 @@ A total conversion project that fuses the stealth-driven shadow gameplay and imm
 ## Prince of Persia 3D — the base of the gameplay
 [![Watch the video](https://img.youtube.com/vi/C0dHgEaUCEQ/maxresdefault.jpg)](https://www.youtube.com/watch?v=ly859IV5gZA&list=PLb8oNKiUbnjFGRpy3A4vm7XLXu5yo-xZE&index=13)
 
-[![Thief Gold](https://raw.githubusercontent.com/igiteam/thief-gold-prince-of-persia-3d/refs/heads/master/thief-gold-box.png)](https://archive.org/details/ThiefGoldUSA)
-
 [![Prince of Persia 3D](https://raw.githubusercontent.com/igiteam/thief-gold-prince-of-persia-3d/refs/heads/master/prince-of-persia-3d-box.png)](https://archive.org/details/prince-of-persia-3-d-definitive-edition)
 
 [![Prince of Persia 3D in-game](https://raw.githubusercontent.com/igiteam/thief-gold-prince-of-persia-3d/refs/heads/master/thief-gold-prince-of-persia-3d-ingame.jpg)](https://archive.org/details/Prince_of_Persia_3D_USA)
@@ -24,6 +22,8 @@ A total conversion project that fuses the stealth-driven shadow gameplay and imm
 [WS11WineCX20.0.4.tar.7z](https://github.com/vitor251093/porting-kit-engines/releases/download/wineskin/WS11WineCX20.0.4.tar.7z)
 
 [![Wine Windows games on macOS](https://raw.githubusercontent.com/igiteam/igi1-macbook-3d-workstation/refs/heads/main/wine-engine-config.png)](https://github.com/igiteam/wine_engines)
+
+[![Thief Gold](https://raw.githubusercontent.com/igiteam/thief-gold-prince-of-persia-3d/refs/heads/master/thief-gold-box.png)](https://archive.org/details/ThiefGoldUSA)
 
 ---
 
