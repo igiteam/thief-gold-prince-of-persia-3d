@@ -30,6 +30,7 @@ A total conversion project that fuses the stealth-driven shadow gameplay and imm
 ### Reference Links
 - [https://www.moddb.com/games/thief-the-dark-project/mods](https://www.moddb.com/games/thief-the-dark-project/mods)
 - [https://dromed.whoopdedo.org](https://dromed.whoopdedo.org)
+- [https://www.gamefront.com/games/thief](https://www.gamefront.com/games/thief)
 - [https://thief-thecircle.com](https://thief-thecircle.com)
 - [https://www.moddb.com/games/thief-the-dark-project/downloads/dromed](https://www.moddb.com/games/thief-the-dark-project/downloads/dromed)
 - [https://www.moddb.com/games/thief-the-dark-project/addons](https://www.moddb.com/games/thief-the-dark-project/addons)
