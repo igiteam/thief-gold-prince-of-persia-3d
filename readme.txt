@@ -16,6 +16,7 @@ A total conversion project that fuses the stealth-driven shadow gameplay and imm
 [![Thief Gold](https://raw.githubusercontent.com/igiteam/thief-gold-prince-of-persia-3d/refs/heads/master/thief-gold-box.png)](https://archive.org/details/ThiefGoldUSA)
 [![Prince Of Persia](https://raw.githubusercontent.com/igiteam/thief-gold-prince-of-persia-3d/refs/heads/master/prince-of-persia-3d-box.png)](https://archive.org/details/prince-of-persia-3-d-definitive-edition)
 [![Prince Of Persia](https://raw.githubusercontent.com/igiteam/thief-gold-prince-of-persia-3d/refs/heads/master/thief-gold-prince-of-persia-3d-ingame.jpg)](https://archive.org/details/Prince_of_Persia_3D_USA)
+[![Prince Of Persia DromEd](https://raw.githubusercontent.com/igiteam/thief-gold-prince-of-persia-3d/refs/heads/master/thief-gold-prince-of-persia-3d.png)](https://archive.org/details/Prince_of_Persia_3D_USA)
 
 
 ## WS11WineCX20.0.4 (MacOSX Big Sur 32bit)
