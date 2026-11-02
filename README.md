@@ -9,7 +9,7 @@ A total conversion project that fuses the stealth-driven shadow gameplay and imm
 [https://api.github.com/repos/igiteam/thief-gold-prince-of-persia-3d/git/trees/main?recursive=1](https://api.github.com/repos/igiteam/thief-gold-prince-of-persia-3d/git/trees/main?recursive=1)
 
 ## Prince of Persia 3D — the base of the gameplay
-[![Watch the video](https://img.youtube.com/vi/ly859IV5gZA/hqdefault.jpg)](https://www.youtube.com/watch?v=ly859IV5gZA&list=PLb8oNKiUbnjFGRpy3A4vm7XLXu5yo-xZE&index=13)
+[![Watch the video](https://img.youtube.com/vi/C0dHgEaUCEQ/maxresdefault.jpg)](https://www.youtube.com/watch?v=ly859IV5gZA&list=PLb8oNKiUbnjFGRpy3A4vm7XLXu5yo-xZE&index=13)
 
 [![Thief Gold](https://raw.githubusercontent.com/igiteam/thief-gold-prince-of-persia-3d/refs/heads/master/thief-gold-box.png)](https://archive.org/details/ThiefGoldUSA)
 
@@ -31,10 +31,20 @@ A total conversion project that fuses the stealth-driven shadow gameplay and imm
 - [https://www.moddb.com/games/thief-the-dark-project/mods](https://www.moddb.com/games/thief-the-dark-project/mods)
 - [https://dromed.whoopdedo.org](https://dromed.whoopdedo.org)
 - [https://thief-thecircle.com](https://thief-thecircle.com)
+- [https://www.moddb.com/games/thief-the-dark-project/addons](https://www.moddb.com/games/thief-the-dark-project/addons)
 - [https://ttlg.com/forums/showthread.php?t=114292&page=1](https://ttlg.com/forums/showthread.php?t=114292&page=1)
+- [http://www.thief-thecircle.com/media/patches/](http://www.thief-thecircle.com/media/patches/)
+- [https://www.moddb.com/mods/prince-of-persia-3d](https://www.moddb.com/mods/prince-of-persia-3d)
+- [https://community.pcgamingwiki.com/files/file/2241-prince-of-persia-3d-widescreen-fix/](https://community.pcgamingwiki.com/files/file/2241-prince-of-persia-3d-widescreen-fix/)
 - [https://popuw.com/index3.html](https://popuw.com/index3.html)
+- [https://popuw.com/mods3.html](https://popuw.com/mods3.html)
+- [https://www.gamepressure.com/download/prince-of-persia-3d-pop3d-widescreen-fix-mod/zf137ca](https://www.gamepressure.com/download/prince-of-persia-3d-pop3d-widescreen-fix-mod/zf137ca)
 - [https://www.gamefront.com/DromEdToolkit+10zip/;13838841;/fileinfo.html](https://www.gamefront.com/DromEdToolkit+10zip/;13838841;/fileinfo.html)
-- 
+- [https://www.moddb.com/games/thief-the-dark-project/downloads/jolly-thief-toolkit-v1](https://www.moddb.com/games/thief-the-dark-project/downloads/jolly-thief-toolkit-v1)
+- [https://www.moddb.com/mods/tfix/downloads/tfix-127b](https://www.moddb.com/mods/tfix/downloads/tfix-127b)
+- [https://www.thiefguild.com/fanmissions/?games=5](https://www.thiefguild.com/fanmissions/?games=5)
+- [https://next.nexusmods.com/games/thiefthedarkproject](https://next.nexusmods.com/games/thiefthedarkproject)
+- [https://gamebanana.com/tuts/games/19371](https://gamebanana.com/tuts/games/19371)
  
 ## Dev Environment
 
