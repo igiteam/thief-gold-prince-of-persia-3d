@@ -27,6 +27,15 @@ A total conversion project that fuses the stealth-driven shadow gameplay and imm
 
 ---
 
+### Reference Links
+- [https://www.moddb.com/games/thief-the-dark-project/mods](https://www.moddb.com/games/thief-the-dark-project/mods)
+- [https://dromed.whoopdedo.org](https://dromed.whoopdedo.org)
+- [https://thief-thecircle.com](https://thief-thecircle.com)
+- [https://ttlg.com/forums/showthread.php?t=114292&page=1](https://ttlg.com/forums/showthread.php?t=114292&page=1)
+- [https://popuw.com/index3.html](https://popuw.com/index3.html)
+- [https://www.gamefront.com/DromEdToolkit+10zip/;13838841;/fileinfo.html](https://www.gamefront.com/DromEdToolkit+10zip/;13838841;/fileinfo.html)
+- 
+ 
 ## Dev Environment
 
 **Official White Wii Remote With Nunchuk — Tested And Working — £14.99**
