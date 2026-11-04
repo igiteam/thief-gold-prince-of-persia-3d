@@ -34,6 +34,7 @@ A total conversion project that fuses the stealth-driven shadow gameplay and imm
 - [https://dromed.whoopdedo.org](https://dromed.whoopdedo.org)
 - [https://www.gamefront.com/games/thief](https://www.gamefront.com/games/thief)
 - [https://thief-thecircle.com](https://thief-thecircle.com)
+- [https://github.com/JonnyBro/beatrun/](https://github.com/JonnyBro/beatrun/)
 - [https://www.moddb.com/games/thief-the-dark-project/downloads/dromed](https://www.moddb.com/games/thief-the-dark-project/downloads/dromed)
 - [https://www.moddb.com/games/thief-the-dark-project/addons](https://www.moddb.com/games/thief-the-dark-project/addons)
 - [https://ttlg.com/forums/showthread.php?t=114292&page=1](https://ttlg.com/forums/showthread.php?t=114292&page=1)
