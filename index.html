@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>3D Audio Notes: Xbox/Sensaura, A3D, OpenAL — and the WASM Pipeline</title>
+</head>
+<body>
+
+<h1>3D Audio Notes</h1>
+<p><em>Notes on Xbox 3D audio, Aureal A3D, OpenAL 3D, HL2 DSP data, and how they fit into a browser/WASM remake pipeline. Written from a discussion about running games in Codespaces and porting them to WebAssembly.</em></p>
+
+<hr>
+
+<h2>1. The short version</h2>
+<p>
+There are three 3D audio systems in play: <strong>Xbox 3D audio (Sensaura)</strong>, <strong>Aureal A3D</strong>, and <strong>OpenAL 3D</strong>.
+They are not the same thing and cannot run each other's data directly.
+They can, however, all be implemented as <em>backends</em> behind one audio router, because they all answer the same question: "play this sound at this position, in this room."
+</p>
+<ul>
+<li><strong>Xbox / Sensaura</strong> = HRTF + I3DL2 reverb presets. Preset-driven. Easy to approximate with OpenAL EFX.</li>
+<li><strong>A3D (Aureal)</strong> = HRTF + wavetracing. Uses the game's real geometry to calculate occlusion and reflection. Hard to recreate, because it needs real-time geometry queries.</li>
+<li><strong>OpenAL 3D</strong> = open-source API with HRTF and EFX reverb. No geometry tracing built in. The natural "glue" layer, because it runs in WASM and has the closest primitive set.</li>
+</ul>
+<p>
+The <strong>HL2 DSP presets</strong> exported earlier are not an Xbox driver and not an A3D driver. They are Valve's reverb <em>recipes</em> — parameter data. They can drive any of the three backends. They cannot be loaded into Xbox or A3D hardware.
+</p>
+
+<hr>
+
+<h2>2. What 3D audio actually is</h2>
+<p>
+3D audio means sound sources are placed in the 3D space around the listener, and each source represents an object in the game world that can make noise. The point is immersion: you hear where things are.
+</p>
+<p>
+The core trick is that this works on <strong>two speakers or a pair of stereo headphones</strong>, not on a 55-speaker Atmos room. The ear/brain is fooled with the <strong>HRTF (Head-Related Transfer Function)</strong>: a model of how sound reaches the two ears depending on direction, with the head and body acting as obstacles, and the ears perceiving altered signals. The brain decodes those differences into a position in space.
+</p>
+<p>
+HRTF alone gives direction. The more advanced systems add <em>environment</em>: reverb, reflection, occlusion, obstruction, distance, Doppler, atmospheric absorption. That is where the three systems diverge.
+</p>
+
+<h3>A quick history of the primitive case</h3>
+<p>
+Doom (1993) had a simple form of 3D audio: every mono source was played as stereo, and position was faked by changing left/right channel volume. No vertical positioning. High frequencies could be filtered when a sound came from behind, to make it sound muffled — the "someone is about to shoot you in the back" effect. Primitive, but it worked.
+</p>
+
+<hr>
+
+<h2>3. The three systems, compared</h2>
+
+<h3>3.1 Xbox 3D audio (Sensaura)</h3>
+<ul>
+<li><strong>Who:</strong> Microsoft, using Sensaura technology (S-3DPA), on the original Xbox (2001).</li>
+<li><strong>Hardware:</strong> the MCPX audio chip. 64 hardware-accelerated 3D channels.</li>
+<li><strong>How it positions sound:</strong> HRTF plus I3DL2-style reverb. Feature sets included <em>EnvironmentFX</em> (reverb), <em>MacroFX</em> (very close-to-head effects), and <em>ZoomFX</em> (large / spread-out sources, e.g. a crowd).</li>
+<li><strong>API lineage:</strong> an enhanced form of DirectSound. It sits in the DS3D → Xbox → XAudio2 family.</li>
+<li><strong>Nature:</strong> <em>preset-driven</em>. The developer picks reverb/environment settings; the hardware applies them.</li>
+<li><strong>Documentation status:</strong> relatively tractable. Clear lineage, Microsoft SDK, archived material.</li>
+</ul>
+
+<h3>3.2 Aureal A3D</h3>
+<ul>
+<li><strong>Who:</strong> Aureal Semiconductor.</li>
+<li><strong>Hardware:</strong> the Vortex / Vortex II (AU8830) sound cards.</li>
+<li><strong>How it positions sound:</strong> HRTF for direction, plus <strong>wavetracing</strong> for environment. Wavetracing uses the game engine's actual 3D geometry to calculate reflections off walls, occlusion by walls, the Doppler effect, acoustic reverberation, and atmospheric absorption.</li>
+<li><strong>Versions:</strong> A3D 1.0 gave HRTF positioning. A3D 2.0 added wavetracing — the big leap. A3D 3.0 added I3DL2 preset support as an auxiliary feature.</li>
+<li><strong>Nature:</strong> <em>real-time, geometry-driven</em>. The reverb is generated from the level's shape, not picked from a menu. This is the key distinction from EAX.</li>
+<li><strong>Documentation status:</strong> thin and scattered. The company went bankrupt; the SDK is semi-lost; the geometry tracing was per-game and poorly standardised.</li>
+</ul>
+
+<h3>3.3 OpenAL 3D</h3>
+<ul>
+<li><strong>What:</strong> an open-source 3D audio API. The practical modern target.</li>
+<li><strong>Capabilities:</strong> HRTF (<code>ALC_SOFT_HRTF</code>) and EFX reverb. EFX is the I3DL2 reverb lineage — the same family as Xbox/Sensaura presets.</li>
+<li><strong>Limitation:</strong> no built-in geometry tracing. Occlusion and reflection are not calculated for you.</li>
+<li><strong>Why it matters:</strong> it runs in WASM, it is open, and its primitive set is close enough to host the other two as approximations.</li>
+</ul>
+
+<h3>3.4 The third-way footnote: Sensaura as a standalone</h3>
+<p>
+Sensaura also existed as a PC technology in its own right (not just inside the Xbox). It was not a discrete API; it piggybacked on DirectSound. It could use A3D2-style game geometry, replacing wavetracing with <em>chaotic wave tracing</em>. It added ZoomFX and MacroFX. Good Sensaura cards included the Turtle Beach Santa Cruz. By many accounts it sounded excellent in Half-Life. It is the least documented of the three, but it matters because the Xbox audio is Sensaura — so understanding Sensaura is understanding the Xbox path.
+</p>
+
+<hr>
+
+<h2>4. Why A3D was arguably the best — and why "no presets" is the wrong reason</h2>
+<p>
+The claim "A3D is best because you don't need presets" is half right. The real advantage is not the absence of presets; it is <strong>real-time computation from geometry</strong>.
+</p>
+<p>
+With EAX, the developer picks a reverb preset (cave, hallway, bathroom) for a room. No matter where you stand in that room, or whether a wall is right next to you, the reverb is the same — because it is a filter preset, unrelated to your position.
+</p>
+<p>
+With A3D 2.0 wavetracing, the engine feeds wall positions and materials, and the system calculates, in real time, the path from source to ears: direct sound, first reflections, later reflections, wall occlusion. Move behind a wall and the high frequencies muffle naturally. Turn a corner and the reflection paths change. Those effects are computed, not chosen. That positional correlation is the thing presets cannot do.
+</p>
+<p>
+<strong>The caveat:</strong> A3D still needs geometry data. The developer has to convert visual polygons into audio polygons and assign materials. If a game did not supply that data, or supplied it badly, A3D's advantage evaporated. Many "A3D support" games were only half-implemented and leaned on software emulation.
+</p>
+<p>
+<strong>So the honest summary:</strong> A3D's edge is "real-time geometry-driven computation," not "no presets." EAX was fast and cheap because it was preset-based — which is also why it won the market, while A3D sounded better but was expensive and complex, and lost for business reasons, not technical ones.
+</p>
+
+<hr>
+
+<h2>5. The business history (why A3D is lost)</h2>
+<ul>
+<li>In 1997–98, the 3D audio chip makers each chose their own approach. Creative pushed EAX (DirectSound 3D extension). Aureal pushed A3D.</li>
+<li>Creative and Aureal fought in court. On 5 March 1998, Creative sued Aureal for patent infringement; Aureal countersued. Aureal won a favourable ruling in December 1999, but the legal costs were too high.</li>
+<li>Aureal filed for bankruptcy on 21 September 2000. Creative acquired Aureal's assets, effectively removing its only competitor in the gaming audio market.</li>
+<li>EAX then dominated into the 2000s, with heavy reverb in later Windows XP titles.</li>
+<li>A lot of this was lost when the industry moved to Windows Vista, which broke the old DirectSound hardware path. Partial recovery is possible on modern PCs (DSOAL, OpenAL Soft, etc.), but it is a big fiddle and still incomplete.</li>
+</ul>
+
+<hr>
+
+<h2>6. Notable games per system</h2>
+<h3>A3D / A3D2</h3>
+<ul>
+<li>Half-Life (fully featured wavetracing)</li>
+<li>Heretic II (fully featured wavetracing)</li>
+<li>Thief (widely cited as the most impressive A3D example)</li>
+<li>Descent 3 (A3D2 support)</li>
+<li>Rally Championship 2000</li>
+<li>Quake 2, Quake 3 Arena, Unreal, Unreal Tournament, Jedi Knight, Sin, Star Trek: Voyager — Elite Force</li>
+</ul>
+
+<h3>EAX-era (later Windows XP)</h3>
+<ul>
+<li>Many titles from the mid-2000s with heavy reverb, including Thief: Deadly Shadows-era and other EAX titles.</li>
+</ul>
+
+<h3>Relevance to the remake projects</h3>
+<p>
+Several remake targets sit right in this era, which is why audio is the silently dropped part of a remake:
+</p>
+<ul>
+<li><strong>Thief Gold</strong> — A3D2 wavetracing (the standout example)</li>
+<li><strong>Nosferatu: Wrath of Malachi</strong> — EAX era</li>
+<li><strong>Medal of Honor / Wolfschanze 1944</strong> — EAX / DS3D era</li>
+<li><strong>Project IGI</strong> — DS3D / EAX era</li>
+</ul>
+<p>
+Graphics get remade; 3D audio tends to get flattened to stereo. That flattening is the gap worth filling.
+</p>
+
+<hr>
+
+<h2>7. The HL2 DSP data — what it is and is not</h2>
+<p>
+The DSP presets exported from HL2 are Valve's reverb parameter definitions (the Source engine DSP preset system). They describe "how much echo in this room," in Valve's own format.
+</p>
+<ul>
+<li><strong>They are not</strong> an Xbox driver.</li>
+<li><strong>They are not</strong> an A3D driver.</li>
+<li><strong>They cannot</strong> be loaded into Xbox hardware or A3D hardware.</li>
+<li><strong>They can</strong> be used as parameter data to drive your own reverb implementation, or an OpenAL EFX preset mapping.</li>
+</ul>
+<p>
+The HL2 Xbox version does have different DSP effects (for example, Breen's speech carries more echo), but that is because the Xbox build used the MCPX hardware — not because it ran A3D. The underlying systems are different.
+</p>
+<p>
+<strong>Emulation here means emulating the result, not the system.</strong> The DSP presets are recipes. Xbox audio and A3D are two different kitchens. You can cook the recipe in your own kitchen; you cannot install an Xbox oven inside an Aureal stove.
+</p>
+
+<hr>
+
+<h2>8. Can all three be implemented together? Yes — as backends</h2>
+<p>
+They are not mutually exclusive. They are three sound-positioning backends behind one interface.
+</p>
+
+<h3>The router architecture</h3>
+<pre>
+Game (HL2 / WASM)
+      |  "play sound at pos, in room"
+      v
+  Audio router (one interface)
+      |-- Xbox/Sensaura backend  -> OpenAL EFX reverb presets
+      |-- A3D backend            -> OpenAL HRTF + geometry trace -> occlusion/reverb params
+      |-- OpenAL 3D backend      -> native HRTF + EFX
+</pre>
+
+<h3>Why this works</h3>
+<ol>
+<li><strong>Shared front-end.</strong> The game asks "play this sound at position X in this room." The router sends that to whichever backend is active.</li>
+<li><strong>OpenAL 3D as the glue.</strong> It is open, runs in WASM, and already has HRTF and EFX reverb. It can host the others as approximations.</li>
+<li><strong>Xbox/Sensaura mapping.</strong> Map to OpenAL EFX reverb presets. Same I3DL2 lineage — a near-direct match, relatively faithful and easy.</li>
+<li><strong>A3D mapping.</strong> Map to OpenAL HRTF plus your own geometry queries. OpenAL does not trace geometry, so you cast rays / query the level yourself and feed the occlusion and reflection results to OpenAL as filters. This is the hard part.</li>
+<li><strong>HL2 DSP presets</strong> become the shared parameter source that drives whichever backend is selected.</li>
+</ol>
+
+<h3>Honest difficulty ranking</h3>
+<ul>
+<li><strong>Xbox/Sensaura</strong> — easiest, fairly faithful, because OpenAL EFX is the same reverb family.</li>
+<li><strong>OpenAL 3D native</strong> — straightforward; it is what it is.</li>
+<li><strong>A3D</strong> — hardest. You must implement real-time geometry queries + ray calculations + material filtering in the engine. OpenAL Soft's HRTF handles the binaural rendering, but not the "shoot a ray from source to listener and see what blocks it" part. That is your code.</li>
+</ul>
+
+<hr>
+
+<h2>9. The WASM / Codespaces pipeline</h2>
+<p>
+The audio work sits inside the general browser-porting pipeline discussed for the remake projects.
+</p>
+
+<h3>Stage 1 — Build in a Codespace</h3>
+<ul>
+<li>Install a <strong>pinned</strong> Emscripten SDK, not "latest". Compiler behaviour changes between releases; pin to the version the project targets.</li>
+<li>Example commands:
+<pre>
+git clone https://github.com/emscripten-core/emsdk.git
+cd emsdk
+./emsdk install 3.1.x
+./emsdk activate 3.1.x
+source ./emsdk_env.sh
+</pre>
+</li>
+<li>Compile the game (game-specific). Typical shape:
+<pre>
+emcc main.cpp -o index.html \
+  -s USE_SDL=2 -s USE_WEBGL2=1 -s FULL_ES3=1 \
+  -O2 --preload-file assets
+</pre>
+</li>
+<li>If the game has a native <code>while(1)</code> loop, convert it to <code>emscripten_set_main_loop</code> (or SDL main callbacks), or the browser will freeze.</li>
+<li>Use <code>--preload-file</code> to pack assets into a <code>.data</code> file the browser can read.</li>
+</ul>
+
+<h3>Stage 2 — Extract artifacts</h3>
+<p>
+Keep the <code>.wasm</code>, <code>.js</code>/<code>.mjs</code>, <code>.data</code>, and your <code>index.html</code> shell. Commit them to a <code>dist/</code> or <code>docs/</code> folder so they survive Codespace deletion.
+</p>
+
+<h3>Stage 3 — Deploy to static hosting (Netlify / Forgejo Pages)</h3>
+<ul>
+<li>Set <code>publish</code> to the build folder.</li>
+<li>Add the WASM MIME type, or the browser may refuse to stream-compile:
+<pre>
+[[headers]]
+  for = "/*.wasm"
+  [headers.values]
+    Content-Type = "application/wasm"
+</pre>
+</li>
+<li>Only if the build uses pthreads, add COOP/COEP headers:
+<pre>
+Cross-Origin-Opener-Policy = "same-origin"
+Cross-Origin-Embedder-Policy = "require-corp"
+</pre>
+</li>
+</ul>
+
+<h3>Stage 4 — Host the full game properly</h3>
+<ul>
+<li>The <strong>engine code</strong> is open and can be public.</li>
+<li>The <strong>game data</strong> (pak0.pk3, doom.wad) is not freely redistributable. Keep it out of public repos.</li>
+<li>For your own testing, host the data privately or load it at runtime. Do not publish a public URL that serves copyrighted data.</li>
+<li>Never serve the data from a public Codespace port. That is both a copyright exposure and the exact abuse pattern documented in the Codespaces security research (public <code>app.github.dev</code> ports used as unauthenticated file servers).</li>
+</ul>
+
+<hr>
+
+<h2>10. Codespaces security notes (why the pipeline shape matters)</h2>
+<p>
+Three separate research strands matter here, and they point the same way.
+</p>
+<ul>
+<li><strong>Repo-config RCE against you.</strong> A Codespace automatically respects <code>.vscode/tasks.json</code> with <code>runOn: folderOpen</code>, <code>.vscode/settings.json</code> environment injection (e.g. <code>PROMPT_COMMAND</code>), and <code>.devcontainer/devcontainer.json</code> lifecycle hooks (<code>postCreateCommand</code>, <code>postStartCommand</code>). Opening a Codespace on a malicious repo or PR can execute code and exfiltrate the scoped GitHub token and Codespaces secrets. Microsoft's position: by design, constrained by trusted-repository controls.</li>
+<li><strong>Codespaces as attacker infrastructure.</strong> Public forwarded ports (<code>*.app.github.dev</code>) were used as free, trusted-looking, disposable file servers and C2 webhooks, including infostealer campaigns. The random subdomain has no bad reputation, and an ingress controller hides the origin from Shodan/Censys.</li>
+<li><strong>Defensive baseline.</strong> Ports private by default; never leave a port public for anything with data or credentials; review <code>.devcontainer/</code> like a workflow file; no wildcard / <code>write-all</code> cross-repo permissions; scope secrets to the fewest repositories; keep auto-run tasks off; use read + fork for reviewing other people's work.</li>
+</ul>
+<p>
+<strong>The rule for the pipeline:</strong> Codespaces is a workshop, not a storefront. Build there, extract artifacts, host on Netlify / Forgejo Pages, and never leave the built data on a public Codespace port.
+</p>
+
+<hr>
+
+<h2>11. Recreating A3D-style audio in the browser — the real opportunity</h2>
+<p>
+Web Audio has an HRTF panner. OpenAL Soft in WASM has HRTF and EFX. Neither does A3D2-style geometry-driven wavetracing out of the box. That is the underexplored niche.
+</p>
+<p>
+The reason it is feasible now, when it was not on original hardware: the source ports often still have the geometry queries that A3D2 needed. If the remake engine exposes level geometry and material data, you can:
+</p>
+<ol>
+<li>Query geometry around the listener and the source.</li>
+<li>Cast rays for occlusion and first/later reflections.</li>
+<li>Turn the results into filter and reverb parameters.</li>
+<li>Feed those parameters into OpenAL HRTF + EFX (or a custom Web Audio graph).</li>
+</ol>
+<p>
+That is "recreate A3D's intent," not "emulate A3D's hardware." And it fits the differential-testing lesson from the Brightwork article: <em>the original game is the only judge</em>. If the goal is fidelity, the reference is the original audio, and the denominator (how many sounds, how many positions, how many rooms) has to be counted honestly.
+</p>
+
+<hr>
+
+<h2>12. Suggested next steps</h2>
+<ol>
+<li><strong>Prove the pipeline cheaply first.</strong> Use a small port (e.g. a Doom WASM port with shareware data) to go end to end: Codespace build → artifacts → Netlify → working link. That validates the build and hosting stages without the porting fight.</li>
+<li><strong>Then tackle a game in the A3D era.</strong> Thief Gold is the natural candidate for an audio-focused attempt, because the original is the standout A3D2 example and the source port retains the relevant engine data.</li>
+<li><strong>Implement the router early.</strong> Even a stub router with the three backend interfaces defined will keep audio decisions out of the game code and make it possible to compare backends on the same scene.</li>
+<li><strong>Start with Xbox/Sensaura via OpenAL EFX.</strong> It is the closest match and gives a working "preset" backend quickly.</li>
+<li><strong>Build the A3D backend incrementally.</strong> HRTF positioning first (OpenAL), then simple occlusion (single ray), then reflections, then material filtering. Each step is testable against the original.</li>
+<li><strong>Keep data out of public repos and public ports.</strong> Engine public, data private, hosting static.</li>
+</ol>
+
+<hr>
+
+<h2>13. Glossary</h2>
+<dl>
+<dt><strong>HRTF</strong></dt>
+<dd>Head-Related Transfer Function. A model of how sound reaches the two ears depending on direction, allowing two-channel headphones to convey 3D position.</dd>
+
+<dt><strong>Wavetracing</strong></dt>
+<dd>Aureal's A3D2 technique. Real-time calculation of sound paths using the game's actual geometry: reflections, occlusion, reverb, Doppler, absorption.</dd>
+
+<dt><strong>I3DL2</strong></dt>
+<dd>An industry reverb standard. The common ancestor of EAX and Sensaura/Xbox reverb presets, and the basis of OpenAL EFX reverb.</dd>
+
+<dt><strong>EAX</strong></dt>
+<dd>Creative's Environmental Audio Extensions. A preset-based reverb/environment system built on DirectSound 3D.</dd>
+
+<dt><strong>EnvironmentFX / MacroFX / ZoomFX</strong></dt>
+<dd>Sensaura feature sets: reverb/environment, very-close-to-head effects, and large/spread-out source simulation.</dd>
+
+<dt><strong>DS3D</strong></dt>
+<dd>DirectSound 3D, the DirectX 3 (1996) 3D audio layer that EAX extended and that the Xbox audio derives from.</dd>
+
+<dt><strong>EFX</strong></dt>
+<dd>OpenAL's effects extension, including reverb in the I3DL2 family.</dd>
+
+<dt><strong>WASM</strong></dt>
+<dd>WebAssembly. A compact binary format that lets C/C++/Rust code run in the browser at near-native speed.</dd>
+
+<dt><strong>Emscripten / emsdk</strong></dt>
+<dd>The toolchain and SDK that compile native code to WASM, and the version manager for it.</dd>
+
+<dt><strong>Codespace</strong></dt>
+<dd>A temporary cloud development environment (Linux VM + VS Code in the browser) provided by GitHub. A workshop, not a storefront.</dd>
+</dl>
+
+<hr>
+
+<p><em>End of notes.</em></p>
+
+</body>
+</html>
