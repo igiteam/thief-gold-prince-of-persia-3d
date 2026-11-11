@@ -218,6 +218,216 @@ The most promising current approach is community reverse engineering. A project 
 
 So, the two dlls in that old post you read work as a team: a3dapi.dll handles the "what to compute," and a3d.dll handles the "how to produce sound." A2D skips the hardware part and simply computes positioning in software, naturally requiring no dedicated a3d.dll.
 
+
+Files in current category:
+
+File Size Added Category ["Believe Your Ears" - Aureal A3D Demo Disc](getfile.php?fileid=1547&menustate=0) 312.85 MiB
+
+2019-06-04  
+21:52:44
+
+Aureal [A2D Support Files v3.12](getfile.php?fileid=173&menustate=0) 227.79 KiB
+
+2012-01-24  
+20:49:52
+
+Aureal [A3D Support Files v1.2.12 - 3.11](getfile.php?fileid=1940&menustate=0) 3.26 MiB
+
+2022-07-18  
+13:44:49
+
+Aureal [A3D Support Files v3.12](getfile.php?fileid=174&menustate=0) 1.28 MiB
+
+2012-01-24  
+20:51:11
+
+Aureal [AU8810 9x 4.06.3220 driver](getfile.php?fileid=343&menustate=0) 9.00 MiB
+
+2012-03-16  
+03:45:24
+
+Aureal [AU8810 9x 4.06.3220 driver (full)](getfile.php?fileid=458&menustate=0) 35.08 MiB
+
+2013-03-28  
+20:11:07
+
+Aureal [AU8820/AU8808 9x 4.06.1160 driver](getfile.php?fileid=454&menustate=0) 6.36 MiB
+
+2013-03-28  
+20:06:28
+
+Aureal [AU8820/AU8808 9x 4.06.1185 driver](getfile.php?fileid=457&menustate=0) 6.52 MiB
+
+2013-03-28  
+20:06:28
+
+Aureal [AU8820/AU8808 9x 4.06.1186 driver](getfile.php?fileid=455&menustate=0) 7.16 MiB
+
+2013-03-28  
+20:06:28
+
+Aureal [AU8820/AU8808 9x 4.06.1187 driver](getfile.php?fileid=456&menustate=0) 9.25 MiB
+
+2013-03-28  
+20:06:28
+
+Aureal [AU8820/AU8808 9x 4.06.1189 driver](getfile.php?fileid=175&menustate=0) 5.55 MiB
+
+2012-01-24  
+20:53:09
+
+Aureal [AU8830 9x 4.06.2000 driver](getfile.php?fileid=453&menustate=0) 6.59 MiB
+
+2013-03-28  
+20:00:49
+
+Aureal [AU8830 9x 4.06.2015 driver (recommended for DirectX &gt;= 7.1)](getfile.php?fileid=451&menustate=0) 21.70 MiB
+
+2013-03-28  
+20:00:49
+
+Aureal [AU8830 9x 4.06.2031 driver](getfile.php?fileid=447&menustate=0) 7.63 MiB
+
+2013-03-28  
+20:00:49
+
+Aureal [AU8830 9x 4.06.2035 driver](getfile.php?fileid=441&menustate=0) 33.93 MiB
+
+2013-03-28  
+20:00:49
+
+Aureal [AU8830 9x 4.06.2040 driver](getfile.php?fileid=446&menustate=0) 34.55 MiB
+
+2013-03-28  
+20:00:49
+
+Aureal [AU8830 9x 4.06.2040 INF Tweaks](getfile.php?fileid=443&menustate=0) 42.21 KiB
+
+2013-03-28  
+20:00:49
+
+Aureal [AU8830 9x 4.06.2041 driver (recommended for DirectX &lt;=7.0a)](getfile.php?fileid=445&menustate=0) 34.53 MiB
+
+2013-03-28  
+20:00:49
+
+Aureal [AU8830 9x 4.06.2041 INF Tweaks](getfile.php?fileid=448&menustate=0) 46.99 KiB
+
+2013-03-28  
+20:00:49
+
+Aureal [AU8830 9x 4.06.2041 S/PDIF routing fix](getfile.php?fileid=1734&menustate=0) 7.71 KiB
+
+2020-10-31  
+16:07:52
+
+Aureal [AU8830 9x 4.06.2048 driver](getfile.php?fileid=436&menustate=0) 36.85 MiB
+
+2013-02-18  
+03:49:43
+
+Aureal [AU8830 9x 4.06.2048 EAX 2.06 Wrapper](getfile.php?fileid=442&menustate=0) 612.83 KiB
+
+2013-03-28  
+20:00:49
+
+Aureal [AU8830 9x 4.06.2048 EAX 3.00 Wrapper](getfile.php?fileid=452&menustate=0) 87.75 KiB
+
+2013-03-28  
+20:00:49
+
+Aureal [AU8830 9x 4.06.2048 HRTF Profiles](getfile.php?fileid=450&menustate=0) 248.04 KiB
+
+2013-03-28  
+20:00:49
+
+Aureal [AU8830 9x 4.06.2048 INF Tweaks](getfile.php?fileid=449&menustate=0) 20.66 KiB
+
+2013-03-28  
+20:00:49
+
+Aureal [AU8830 NT 4.0 2.05.05 driver](getfile.php?fileid=2266&menustate=0) 5.05 MiB
+
+2025-08-11  
+16:16:34
+
+Aureal [Aureal Minerva Utility](getfile.php?fileid=1939&menustate=0) 4.83 MiB
+
+2022-07-18  
+13:44:49
+
+Aureal [Diamond Monster Sound I, M80, MX200](getfile.php?fileid=417&menustate=0) 22.28 MiB
+
+2012-12-27  
+20:07:05
+
+Aureal [Diamond Monster Sound II (MX300) Driver CD image](getfile.php?fileid=400&menustate=0) 59.52 MiB
+
+2012-10-21  
+07:36:08
+
+Aureal [Diamond Monster Sound II (MX300) official downloads](getfile.php?fileid=416&menustate=0) 13.46 MiB
+
+2012-12-27  
+20:01:41
+
+Aureal [Diamond Monster Sound II (MX300) Win9x NT4 v1.01 Beta](getfile.php?fileid=1943&menustate=0) 15.01 MiB
+
+2022-07-18  
+13:53:37
+
+Aureal [Diamond Monster Sound II (MX300) Win9x NT4 v1.02](getfile.php?fileid=1941&menustate=0) 14.43 MiB
+
+2022-07-18  
+13:53:37
+
+Aureal [Diamond Monster Sound M80 / MX200 Driver](getfile.php?fileid=1036&menustate=0) 7.60 MiB
+
+2017-04-26  
+22:41:30
+
+Aureal [SQ2500 OEM Drivers](getfile.php?fileid=1025&menustate=0) 112.84 MiB
+
+2017-04-26  
+21:48:40
+
+Aureal [Techworks Power Vortex2 Superquad Original Installer CD](getfile.php?fileid=399&menustate=0) 56.29 MiB
+
+2012-09-17  
+00:07:06
+
+Aureal [Turtle Beach Montego II Applications CD Version 3.00](getfile.php?fileid=1009&menustate=0) 294.02 MiB
+
+2016-12-26  
+13:06:10
+
+Aureal [Turtle Beach Montego II NT4 2.03](getfile.php?fileid=1944&menustate=0) 4.98 MiB
+
+2022-07-18  
+13:53:37
+
+Aureal [Turtle Beach Montego II Win9x 2046](getfile.php?fileid=1942&menustate=0) 8.40 MiB
+
+2022-07-18  
+13:53:37
+
+Aureal [Vortex Advantage / SoundCom Drivers (2001 from ASUS L8400 Laptop)](getfile.php?fileid=1031&menustate=0) 98.34 MiB
+
+2017-04-26  
+22:23:36
+
+Aureal [Vortex2 SQ2500 Demo CD](getfile.php?fileid=843&menustate=0) 472.23 MiB
+
+2015-11-09  
+00:34:50
+
+Aureal [Vortex2 SQ2500 Driver CD 2.040](getfile.php?fileid=846&menustate=0) 488.03 MiB
+
+2015-11-09  
+03:10:07
+
+Aureal
+
 ## A3D 1.2 Software Development Kit
 1998/03/??
 
