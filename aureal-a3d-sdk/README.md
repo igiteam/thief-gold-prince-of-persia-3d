@@ -192,6 +192,31 @@ Those two define exactly what the WASM/OpenAL backend has to reproduce. Once the
 
 That turns the router interface from the abstract sketch above into a concrete function table.
 
+The core question in that VOGONS thread—"what exactly are a3dapi.dll and a3d.dll, and why does A2D lack the latter"—can be answered clearly: a3dapi.dll is the A3D application programming interface (API) layer, and a3d.dll is the low-level hardware driver or compatibility layer for the specific sound card.
+
+a3dapi.dll: The Stable API Layer
+This is the library directly called by the game. It contains the complete A3D API implementation logic, responsible for managing sound sources, listener positions, and the software-side processing of the geometry engine (Wavetracing) .
+
+What it does: The game tells a3dapi.dll "there's a sound source here," and it calculates the relevant parameters (such as occlusion, reflection, HRTF filtering) before sending instructions downward.
+
+Why it's "stable": Regardless of what sound card you use, the game only recognizes this interface, so a3dapi.dll itself does not change with hardware.
+
+a3d.dll: The Hardware/Driver Adaptation Layer
+This is the low-level driver that "actually makes the sound card produce sound." It directly interfaces with the Aureal Vortex chip (or a third-party wrapper).
+
+Why it "changes": Different sound cards (genuine Vortex, third-party cards using A3D-Live wrappers, software emulation) have completely different underlying implementations. a3d.dll acts as a "translator," forwarding the instructions processed by a3dapi.dll to the specific hardware or software renderer .
+
+What it does: On genuine Vortex cards, it uses the chip's hardware acceleration; on non-Vortex cards, it may rely on software emulation (A2D) or a third-party wrapper to handle it.
+
+Why Does A2D Lack a3d.dll?
+A2D itself is a pure software emulation mode that does not require any dedicated hardware acceleration. In the A2D architecture, the "hardware driver adaptation layer" (a3d.dll) has no hardware to adapt to, so it is directly bypassed or built into the software processing flow of a3dapi.dll .
+
+Moreover, A2D is not a full implementation of A3D. It only performs positioning on the horizontal plane and does not support HRTF, material filters, or real reflection calculations, so its sound quality is far inferior to genuine A3D . This is also why users in the thread said they "couldn't hear any reflections."
+
+Additional Context: Can A3D Be Used on Modern Systems?
+The most promising current approach is community reverse engineering. A project called re-a3d-api is reconstructing the A3D API and its compatibility library in C++, aiming to provide an A3D interface that can run on modern systems . Additionally, A3D-Live is a wrapper that can "trick" the game into thinking A3D hardware exists on modern Windows, but as users in the thread noted, it works "sometimes yes, sometimes no" and is unstable .
+
+So, the two dlls in that old post you read work as a team: a3dapi.dll handles the "what to compute," and a3d.dll handles the "how to produce sound." A2D skips the hardware part and simply computes positioning in software, naturally requiring no dedicated a3d.dll.
 
 ## A3D 1.2 Software Development Kit
 1998/03/??
