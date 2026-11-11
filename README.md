@@ -15,6 +15,16 @@ A total conversion project that fuses the stealth-driven shadow gameplay and imm
 
 [![Prince of Persia DromEd](https://raw.githubusercontent.com/igiteam/thief-gold-prince-of-persia-3d/refs/heads/master/thief-gold-prince-of-persia-3d.png)](https://archive.org/details/Prince_of_Persia_3D_USA)
 
+[![Thief: The Dark Project — Aureal Vortex vs. Sound Blaster Live — 3D Audio/HRTF comparison — A3D/EAX](https://img.youtube.com/vi/zQb6eG1THhA/maxresdefault.jpg)](https://www.youtube.com/watch?v=zQb6eG1THhA)
+
+[![Aureal Vortex A3D Demos Headphones Surround](https://img.youtube.com/vi/7Yc2pODiZgU/maxresdefault.jpg)](https://www.youtube.com/watch?v=7Yc2pODiZgU)
+
+[![Aureal Vortex A3D: Binaural Audio Demo - HRTF Headphone Test - Yamaha Soft Synth](https://img.youtube.com/vi/Cxtx8SgIe_0/maxresdefault.jpg)](https://youtu.be/Cxtx8SgIe_0?si=QMeCjy45lld7mYTf&t=1493)
+
+[![The Great 90s 3D Audio War: Creative Vs Aureal](https://img.youtube.com/vi/xu06xLYxmA0/maxresdefault.jpg)](https://www.youtube.com/watch?v=xu06xLYxmA0)
+
+
+
 ## WS11WineCX20.0.4 (macOS Big Sur 32-bit)
 
 [WS11WineCX20.0.4.tar.7z](https://github.com/vitor251093/porting-kit-engines/releases/download/wineskin/WS11WineCX20.0.4.tar.7z)
