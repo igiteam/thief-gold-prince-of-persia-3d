@@ -26,6 +26,8 @@ A total conversion project that fuses the stealth-driven shadow gameplay and imm
 
 [![The Great 90s 3D Audio War: Creative Vs Aureal](https://img.youtube.com/vi/xu06xLYxmA0/maxresdefault.jpg)](https://www.youtube.com/watch?v=xu06xLYxmA0)
 
+## Aureal A3D Audio 
+[https://html.macosxjs.com/?https%3A%2F%2Fgithub.com%2Figiteam%2Fthief-gold-prince-of-persia-3d%2Fblob%2Fmaster%2Faureal_a3d_audio_research.html](https://html.macosxjs.com/?https%3A%2F%2Fgithub.com%2Figiteam%2Fthief-gold-prince-of-persia-3d%2Fblob%2Fmaster%2Faureal_a3d_audio_research.html)
 
 
 ## WS11WineCX20.0.4 (macOS Big Sur 32-bit)
