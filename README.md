@@ -29,6 +29,8 @@ A total conversion project that fuses the stealth-driven shadow gameplay and imm
 ## Aureal A3D Audio 
 [https://html.macosxjs.com/?https%3A%2F%2Fgithub.com%2Figiteam%2Fthief-gold-prince-of-persia-3d%2Fblob%2Fmaster%2Faureal_a3d_audio_research.html](https://html.macosxjs.com/?https%3A%2F%2Fgithub.com%2Figiteam%2Fthief-gold-prince-of-persia-3d%2Fblob%2Fmaster%2Faureal_a3d_audio_research.html)
 
+[https://html.macosxjs.com/?https%3A%2F%2Fraw.githubusercontent.com%2Figiteam%2Fthief-gold-prince-of-persia-3d%2Frefs%2Fheads%2Fmaster%2Faureal-a3d-sdk%2Fdecompiling-a3d-chip.html](https://html.macosxjs.com/?https%3A%2F%2Fraw.githubusercontent.com%2Figiteam%2Fthief-gold-prince-of-persia-3d%2Frefs%2Fheads%2Fmaster%2Faureal-a3d-sdk%2Fdecompiling-a3d-chip.html)
+
 
 ## WS11WineCX20.0.4 (macOS Big Sur 32-bit)
 
