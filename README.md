@@ -31,6 +31,17 @@ A total conversion project that fuses the stealth-driven shadow gameplay and imm
 
 [https://html.macosxjs.com/?https%3A%2F%2Fraw.githubusercontent.com%2Figiteam%2Fthief-gold-prince-of-persia-3d%2Frefs%2Fheads%2Fmaster%2Faureal-a3d-sdk%2Fdecompiling-a3d-chip.html](https://html.macosxjs.com/?https%3A%2F%2Fraw.githubusercontent.com%2Figiteam%2Fthief-gold-prince-of-persia-3d%2Frefs%2Fheads%2Fmaster%2Faureal-a3d-sdk%2Fdecompiling-a3d-chip.html)
 
+### Reference Images: Sony MDR-V6
+
+These are period-correct studio monitors, highly recommended for testing the "analytical" side of your emulation.
+
+| Image 1 | Image 2 | Image 3 | Image 4 |
+| :---: | :---: | :---: | :---: |
+| ![Sony MDR-V6 Image 1](https://raw.githubusercontent.com/igiteam/thief-gold-prince-of-persia-3d/refs/heads/master/aureal-a3d-sdk/sony_mdr_v6_1.png) | ![Sony MDR-V6 Image 2](https://raw.githubusercontent.com/igiteam/thief-gold-prince-of-persia-3d/refs/heads/master/aureal-a3d-sdk/sony_mdr_v6_2.png) | ![Sony MDR-V6 Image 3](https://raw.githubusercontent.com/igiteam/thief-gold-prince-of-persia-3d/refs/heads/master/aureal-a3d-sdk/sony_mdr_v6_3.png) | ![Sony MDR-V6 Image 4](https://raw.githubusercontent.com/igiteam/thief-gold-prince-of-persia-3d/refs/heads/master/aureal-a3d-sdk/sony_mdr_v6_4.png) |
+
+*(Note: These images are from an eBay listing, used here for product identification.)*
+
+
 
 ## WS11WineCX20.0.4 (macOS Big Sur 32-bit)
 
