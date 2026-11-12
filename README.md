@@ -33,7 +33,7 @@ A total conversion project that fuses the stealth-driven shadow gameplay and imm
 
 ### Reference Images: Sony MDR-V6
 
-These are period-correct studio monitors, highly recommended for testing the "analytical" side of your emulation.
+These are period-correct studio monitors, highly recommended for testing the "analytical" side of Aureal Vortex A3D.
 
 | Image 1 | Image 2 | Image 3 | Image 4 |
 | :---: | :---: | :---: | :---: |
