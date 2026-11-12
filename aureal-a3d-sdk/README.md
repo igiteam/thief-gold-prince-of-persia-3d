@@ -79,34 +79,50 @@ Because A3D is **DS3D + extensions**, the mapping to OpenAL is more direct than 
 
 # A3D Emulation & Reference Headphones
 This document lists headphones suitable for testing and comparing an **Aureal A3D emulation** against real hardware.
+# A3D Emulation & Reference Headphones
+
+This document lists headphones suitable for testing and comparing an Aureal A3D emulation against real hardware. It begins with period-correct models from the early 2000s, followed by modern reference headphones for accurate Null Testing.
 
 ## Early 2000s Era (Period-Correct)
+
 These models were available during the heyday of Aureal A3D 2.0 and are useful for experiencing positional audio as players would have heard it at the time.
 
 | Model | Release / Era | Price (USD) | Type | Notes |
-|---|---|---:|---|---|
-| Sennheiser HD 280 Pro | Early 2000s | ~$100 | Closed-back, wired | Popular in 2004 gaming discussions. Good isolation and folding design. |
-| Sennheiser PC 150 / PC 155 | Early 2000s | ~$50–$80 | Wired headset | Very popular PC gaming headsets. Includes a boom microphone. |
-| Plantronics DSP-500 | Early 2000s | ~$60 | USB headset | Built-in USB sound card. Direct competitor to the Sennheiser PC 150. |
-| Sennheiser HD 212 Pro | Early 2000s | ~$50 | Closed-back, wired | Bass-heavy sound signature. Excessive bass can mask subtle positional cues. |
-| Sennheiser HD 497 | Early 2000s | ~$50 | Open-back, wired | Budget-friendly option. A noticeable upgrade over inexpensive headphones of the period. |
-| Sennheiser HD 650 | 2003 | ~$400–$500 | Open-back, wired | Audiophile classic from the era. Suitable as a high-quality reference headphone. |
+| :--- | :--- | :--- | :--- | :--- |
+| **Sennheiser HD 280 Pro** | Early 2000s | ~$100 | Closed-back, wired | Popular in 2004 gaming discussions. Good isolation and folding design. |
+| **Sennheiser PC 150 / PC 155** | Early 2000s | ~$50–$80 | Wired headset | Very popular PC gaming headsets. Includes a boom microphone. |
+| **Plantronics DSP-500** | Early 2000s | ~$60 | USB headset | Built-in USB sound card. Direct competitor to the Sennheiser PC 150. |
+| **Sennheiser HD 212 Pro** | Early 2000s | ~$50 | Closed-back, wired | Bass-heavy sound signature. Excessive bass can mask subtle positional cues. |
+| **Sennheiser HD 497** | Early 2000s | ~$50 | Open-back, wired | Budget-friendly option. A noticeable upgrade over inexpensive headphones of the period. |
+| **Sennheiser HD 650** | 2003 | ~$400–$500 | Open-back, wired | Audiophile classic from the era. Suitable as a high-quality reference headphone. |
+| **Audio-Technica ATH-A900** | ~2003 | ~$250–$400 | Closed-back, wired | Japanese import. Popular in early 2000s audiophile circles. |
+| **Beyerdynamic DT 770 PRO** | 1990s–2000s | ~$150–$180 | Closed-back, wired | Long-running studio standard. Good isolation. |
+| **Beyerdynamic DT 880** | 2000s | ~$200–$250 | Semi-open, wired | Neutral, detailed. Popular for critical listening in the 2000s. |
+| **AKG K 240 Studio** | 1990s–2000s | ~$100–$150 | Semi-open, wired | Studio monitoring standard. Neutral, comfortable. |
+| **AKG K 501 / K 701** | 2000s (K701: 2006) | ~$200–$400 | Open-back, wired | K501 was the 2000s reference. K701 came later (2006). |
+| **Grado SR80** | 1990s–2000s | ~$100–$120 | Open-back, wired | Bright, forward. Popular in 2000s budget audiophile circles. |
+| **Grado SR225** | 1990s–2000s | ~$200–$250 | Open-back, wired | Step up from SR80. Aggressive, detailed. |
+| **Sony MDR-V6 / MDR-7506** | 1985–ongoing | ~$80–$120 | Closed-back, wired | Industry standard in studios. Foldable, durable. |
+| **Sony MDR-CD900ST** | 1990s–2000s | ~$150–$250 | Closed-back, wired | Japanese studio standard. Flat, analytical. |
+| **Philips SHP8900 / SHP9000** | 2000s | ~$100–$200 | Open-back, wired | Popular budget audiophile option in the 2000s. |
+| **Koss KSC-75** | 2000s | ~$20–$30 | Clip-on, wired | Cult classic. Surprisingly good positional audio for the price. |
 
 ## Modern Reference Headphones (For Null Testing)
-These models are recommended for accurately comparing an emulation against real A3D hardware.
-- Wired analog connectivity.
-- No active DSP or virtual surround processing.
-- Consistent frequency response.
-- Good imaging and positional detail.
-- Comfortable fit for extended testing sessions.
+
+These models are recommended for accurately comparing an emulation against real A3D hardware. They are wired, contain no active DSP or virtual surround processing, and offer consistent frequency response, good imaging, and comfort for extended sessions.
 
 | Model | Release / Era | Price (USD) | Type | Notes |
-|---|---|---:|---|---|
-| Sennheiser HD 800 S | 2016 (HD 800: 2009) | ~$1,700–$2,000 | Open-back, wired | High-end reference headphone with an exceptionally wide soundstage. Excellent for detailed positional comparisons and null testing. |
-| Sennheiser HD 599 | ~2016 | ~$200 | Open-back, wired | Practical reference option. Comfortable, with no built-in DSP. Good for extended testing sessions. |
-| Sennheiser HD 560S | ~2020 | ~$230 | Open-back, wired | Analytical presentation with detailed imaging. Useful for identifying subtle audio differences and implementation errors. |
-| Audio-Technica ATH-AD700X | ~2012 | ~$150–$200 | Open-back, wired | Airy presentation and excellent directional cues. Particularly useful for evaluating footsteps and positional audio. Limited deep sub-bass response. |
-| Beyerdynamic DT 990 PRO | Long-running (current) | ~$150–$180 | Open-back, wired | Bright treble response can reveal high-frequency artifacts, including occlusion-related muffling. May become fatiguing during long sessions. |
+| :--- | :--- | :--- | :--- | :--- |
+| **Sennheiser HD 800 S** | 2016 (HD 800: 2009) | ~$1,700–$2,000 | Open-back, wired | High-end reference headphone with an exceptionally wide soundstage. Excellent for detailed positional comparisons and null testing. |
+| **Sennheiser HD 599** | ~2016 | ~$200 | Open-back, wired | Practical reference option. Comfortable, with no built-in DSP. Good for extended testing sessions. |
+| **Sennheiser HD 560S** | ~2020 | ~$230 | Open-back, wired | Analytical presentation with detailed imaging. Useful for identifying subtle audio differences and implementation errors. |
+| **Audio-Technica ATH-AD700X** | ~2012 | ~$150–$200 | Open-back, wired | Airy presentation and excellent directional cues. Particularly useful for evaluating footsteps and positional audio. Limited deep sub-bass response. |
+| **Beyerdynamic DT 990 PRO** | Long-running (current) | ~$150–$180 | Open-back, wired | Bright treble response can reveal high-frequency artifacts, including occlusion-related muffling. May become fatiguing during long sessions. |
+| **HiFiMan Sundara** | 2018 | ~$300–$350 | Planar, open-back | Planar magnetic drivers. Excellent detail and positioning. |
+| **AKG K 712 Pro** | ~2014 | ~$300–$400 | Open-back, wired | Wide soundstage. Good for positional testing. |
+| **Philips Fidelio X2HR** | 2016 | ~$150–$200 | Open-back, wired | Bass-heavy but open. Good for immersive testing. |
+| **Drop + Sennheiser HD 6XX** | 2016 | ~$200 | Open-back, wired | Same driver as HD 650. Cheaper alternative. |
+| **Drop + HIFIMAN HE-4XX** | 2017 | ~$180 | Planar, open-back | Planar detail at a budget. Good for critical listening. |
 
 ## What to Avoid
 Avoid headphones that apply their own virtual surround processing or other spatial audio effects.
