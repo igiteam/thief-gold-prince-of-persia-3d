@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>A3D Hardware Emulation & Reverse Engineering Log</title>
+</head>
+<body>
+
+<h1>Aureal A3D Hardware Emulation: Research & Implementation Log</h1>
+
+<p><strong>Project:</strong> Recreating the Aureal Vortex 2 (AU8830) A3D 2.0 hardware experience on modern systems, including a full chip-level emulation path and a behavioral (WASM) fallback.</p>
+
+<hr>
+
+<h2>1. The Target: Aureal Vortex 2 (AU8830)</h2>
+
+<p>The AU8830 is a fixed-function PCI audio accelerator released in 1998. It is not a general-purpose CPU; it is a dedicated DSP. Its internal architecture is built around the <strong>Vortex Audio Dataflow Bus (VDB)</strong>, which interconnects several processing blocks:</p>
+
+<ul>
+    <li><strong>A3D Engine:</strong> Handles 16 simultaneous A3D sources, HRTF (Head-Related Transfer Function) filtering, atmospheric absorption, and up to 64 wall reflections (Wavetracing).</li>
+    <li><strong>Wavetable Synthesizer:</strong> 320 voices (64 hardware, 256 software). When not used for MIDI, these channels can be repurposed for A3D reflection rendering.</li>
+    <li><strong>Digital Mixers & Sample Rate Converters:</strong> 32-input, 16-channel mixing and 16-channel SRC.</li>
+    <li><strong>10-Band Equalizer:</strong> Hardware stereo graphic EQ (96dB SNR).</li>
+    <li><strong>Crosstalk Canceller:</strong> A biquad crossover filter designed to optimize stereo speaker playback.</li>
+    <li><strong>PCI Bus Controller:</strong> PCI v2.2 bus master with 96 DMA channels.</li>
+    <li><strong>Legacy Emulator:</strong> Hardware Sound Blaster Pro / DOS compatibility.</li>
+</ul>
+
+<p><strong>Key Detail:</strong> The A3D engine does <em>not</em> calculate the geometry of the level. The game/CPU calculates the reflection paths and sends the resulting parameters (delays, attenuations) to the chip. The chip applies the HRTF and mixes the audio.</p>
+
+<p><strong>Reference:</strong> <a href="https://theretroweb.com/chip/documentation/dsa-593840-65982eff1af2d537237231.pdf">Aureal Vortex 2 (AU8830) Product Brief</a> (The only public architecture document; it does not contain register maps).</p>
+
+<hr>
+
+<h2>2. The Codec: SigmaTel STAC9708</h2>
+
+<p>The Vortex 2 does not output analog audio directly. It connects to an AC'97 codec via a 5-wire AC-Link. A common codec paired with the Vortex 2 is the <strong>SigmaTel STAC9708</strong>.</p>
+
+<p>To perfectly emulate the sound of the card (for the Null Test), you must also emulate the codec's behavior: its noise floor, its specific DAC/ADC characteristics, and the SS3D (Sigmatel Surround 3D) stereo enhancement feature. Fortunately, the STAC9708 is fully documented.</p>
+
+<p><strong>Reference:</strong> <a href="https://theretroweb.com/chip/documentation/stac9708-69d3c56065a7d499667042.PDF">SigmaTel STAC9708/11 AC'97 Codec Datasheet</a> (Full register map and AC-Link protocol provided).</p>
+
+<hr>
+
+<h2>3. Decompiling the Chip: The Reverse Engineering Process</h2>
+
+<p>The A3D engine's internal register map (the addresses and data values that control HRTF, reflection taps, and occlusion) was never publicly released. It must be reverse-engineered.</p>
+
+<h3>3.1 The Hardware Setup</h3>
+<p>You need a native Windows 98 SE machine with a real Vortex 2 card (e.g., Aureal SQ2500, Turtle Beach Montego II, or Diamond Monster Sound MX300). Modern systems with PCIe-to-PCI adapters will not work for driver tracing due to missing Win9x driver support.</p>
+
+<h3>3.2 The Tools</h3>
+<ul>
+    <li><strong>SoftICE:</strong> A Ring 0 kernel debugger. You set a breakpoint on the card's memory-mapped I/O (MMIO) region. When the driver writes to the card, SoftICE freezes the system.</li>
+    <li><strong>Bus Hound:</strong> A PCI bus tracer that logs all data moving between the CPU and the card.</li>
+</ul>
+
+<h3>3.3 The Method</h3>
+<ol>
+    <li>Boot the Win98 machine and load the official Aureal driver.</li>
+    <li>Launch an A3D 2.0 game (e.g., <em>Thief Gold</em>).</li>
+    <li>Trigger a specific audio event (e.g., move behind a wall to trigger occlusion).</li>
+    <li>The debugger catches the driver writing to a specific address. Record the <strong>Address</strong> and <strong>Data</strong>.</li>
+    <li>Correlate the write with the game event. For example, if moving left causes a write of <code>0x00FF</code> to address <code>0x27B04</code>, you have found the left/right panning register.</li>
+</ol>
+
+<p><strong>Starting Point:</strong> The open-source Linux <code>au88x0</code> driver (specifically <code>au8830.h</code> and <code>au88x0_a3d.c</code>) contains partial DMA and routing addresses. These were collected by reverse-engineering the old Windows <code>asp4core.vxd</code> file. Use these as your baseline.</p>
+
+<hr>
+
+<h2>4. The Null Test: Proving Emulation Accuracy</h2>
+
+<p>Once you have built your software emulator, you must prove it is accurate.</p>
+
+<ol>
+    <li><strong>Record the Real Hardware:</strong> Capture the audio output from the Win98 PC using a high-quality digital or analog capture.</li>
+    <li><strong>Record the Emulator:</strong> Capture the audio output from your emulator playing the exact same game event.</li>
+    <li><strong>Invert and Sum:</strong> Align the two audio files in an editor (e.g., Audacity). Invert the phase of one track and mix them together.</li>
+    <li><strong>The Result:</strong> If the emulation is perfect, the audio will cancel out into <strong>absolute silence</strong>. Any residual sound (hiss, delay, echo) is the error in your emulation.</li>
+</ol>
+
+<hr>
+
+<h2>5. Headphone Selection for Testing</h2>
+
+<p>To accurately verify the emulation, you must use <strong>plain stereo, neutral-sounding wired headphones</strong>. Do not use "7.1 Virtual Surround" gaming headsets, as their internal HRTF processing will double-process the audio and ruin your reference.</p>
+
+<ul>
+    <li><strong>Reference Standard:</strong> Sennheiser HD 800 S. Widest soundstage, highly accurate, positionally invariant.</li>
+    <li><strong>Practical Choice:</strong> Sennheiser HD 599 or HD 560S. Neutral, open-back, no DSP, comfortable for long sessions.</li>
+    <li><strong>Positioning Specialist:</strong> Audio-Technica ATH-AD700X. Airy presentation, excellent for directional cues and footsteps.</li>
+    <li><strong>Detailed Option:</strong> Beyerdynamic DT 990 PRO. Bright treble, reveals high-frequency errors (occlusion muffle, reflection sharpness).</li>
+</ul>
+
+<p><strong>Warning:</strong> Do not buy a headset with built-in DSP (e.g., SteelSeries Arctis, Razer BlackShark). They will mask the flaws in your emulation.</p>
+
+<hr>
+
+<h2>6. The Alternative: Behavioral Emulation (WASM Router)</h2>
+
+<p>If full chip-level emulation is too complex, the alternative is a "behavioral" emulation. This is a WebAssembly (WASM) audio router that intercepts the game's audio calls and performs the A3D logic on the CPU.</p>
+
+<ul>
+    <li><strong>Mechanism:</strong> The game calls a generic audio API. The router casts rays against the game's level geometry, calculates occlusion and reflections, and feeds the results into modern OpenAL (EFX) filters.</li>
+    <li><strong>Advantage:</strong> Runs on any modern browser or OS. Does not require the original hardware or drivers.</li>
+    <li><strong>Disadvantage:</strong> It recreates the <em>intent</em> of A3D, not the exact hardware output. It will not pass the Null Test against the real card.</li>
+</ul>
+
+<hr>
+
+<h3>Reference Links</h3>
+<ul>
+    <li><a href="https://theretroweb.com/chip/documentation/stac9708-69d3c56065a7d499667042.PDF">SigmaTel STAC9708 AC'97 Codec Datasheet</a></li>
+    <li><a href="https://theretroweb.com/chip/documentation/dsa-593840-65982eff1af2d537237231.pdf">Aureal Vortex 2 (AU8830) Product Brief</a></li>
+    <li><a href="https://www.vogons.org/viewtopic.php?t=77643">VOGONS: Fortex (Vortex 2 + YMF744 Combo Card) Development Thread</a></li>
+    <li><a href="https://www.vogons.org/viewtopic.php?t=63560">VOGONS: Aureal 3D Emulation on a Modern System</a></li>
+    <li><a href="https://www.vogons.org/viewtopic.php?t=78197">VOGONS: (Thread 78197 - Driver/RE Discussion)</a></li>
+</ul>
+
+</body>
+</html>
