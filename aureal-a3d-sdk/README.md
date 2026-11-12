@@ -85,6 +85,18 @@ This document lists headphones suitable for testing and comparing an Aureal A3D 
 
 ## Early 2000s Era (Period-Correct)
 
+### Reference Images: Sony MDR-V6
+
+These are period-correct studio monitors, highly recommended for testing the "analytical" side of your emulation.
+
+| Image 1 | Image 2 | Image 3 | Image 4 |
+| :---: | :---: | :---: | :---: |
+| ![Sony MDR-V6 Image 1](https://raw.githubusercontent.com/igiteam/thief-gold-prince-of-persia-3d/refs/heads/master/aureal-a3d-sdk/sony_mdr_v6_1.png) | ![Sony MDR-V6 Image 2](https://raw.githubusercontent.com/igiteam/thief-gold-prince-of-persia-3d/refs/heads/master/aureal-a3d-sdk/sony_mdr_v6_2.png) | ![Sony MDR-V6 Image 3](https://raw.githubusercontent.com/igiteam/thief-gold-prince-of-persia-3d/refs/heads/master/aureal-a3d-sdk/sony_mdr_v6_3.png) | ![Sony MDR-V6 Image 4](https://raw.githubusercontent.com/igiteam/thief-gold-prince-of-persia-3d/refs/heads/master/aureal-a3d-sdk/sony_mdr_v6_4.png) |
+
+*(Note: These images are from an eBay listing, used here for product identification.)*
+
+
+
 These models were available during the heyday of Aureal A3D 2.0 and are useful for experiencing positional audio as players would have heard it at the time.
 
 | Model | Release / Era | Price (USD) | Type | Notes |
