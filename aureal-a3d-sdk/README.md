@@ -77,9 +77,66 @@ Because A3D is **DS3D + extensions**, the mapping to OpenAL is more direct than 
 
 ---
 
+# A3D Emulation & Reference Headphones
+This document lists headphones suitable for testing and comparing an **Aureal A3D emulation** against real hardware.
+
+## Early 2000s Era (Period-Correct)
+These models were available during the heyday of Aureal A3D 2.0 and are useful for experiencing positional audio as players would have heard it at the time.
+
+| Model | Release / Era | Price (USD) | Type | Notes |
+|---|---|---:|---|---|
+| Sennheiser HD 280 Pro | Early 2000s | ~$100 | Closed-back, wired | Popular in 2004 gaming discussions. Good isolation and folding design. |
+| Sennheiser PC 150 / PC 155 | Early 2000s | ~$50–$80 | Wired headset | Very popular PC gaming headsets. Includes a boom microphone. |
+| Plantronics DSP-500 | Early 2000s | ~$60 | USB headset | Built-in USB sound card. Direct competitor to the Sennheiser PC 150. |
+| Sennheiser HD 212 Pro | Early 2000s | ~$50 | Closed-back, wired | Bass-heavy sound signature. Excessive bass can mask subtle positional cues. |
+| Sennheiser HD 497 | Early 2000s | ~$50 | Open-back, wired | Budget-friendly option. A noticeable upgrade over inexpensive headphones of the period. |
+| Sennheiser HD 650 | 2003 | ~$400–$500 | Open-back, wired | Audiophile classic from the era. Suitable as a high-quality reference headphone. |
+
+## Modern Reference Headphones (For Null Testing)
+These models are recommended for accurately comparing an emulation against real A3D hardware.
+- Wired analog connectivity.
+- No active DSP or virtual surround processing.
+- Consistent frequency response.
+- Good imaging and positional detail.
+- Comfortable fit for extended testing sessions.
+
+| Model | Release / Era | Price (USD) | Type | Notes |
+|---|---|---:|---|---|
+| Sennheiser HD 800 S | 2016 (HD 800: 2009) | ~$1,700–$2,000 | Open-back, wired | High-end reference headphone with an exceptionally wide soundstage. Excellent for detailed positional comparisons and null testing. |
+| Sennheiser HD 599 | ~2016 | ~$200 | Open-back, wired | Practical reference option. Comfortable, with no built-in DSP. Good for extended testing sessions. |
+| Sennheiser HD 560S | ~2020 | ~$230 | Open-back, wired | Analytical presentation with detailed imaging. Useful for identifying subtle audio differences and implementation errors. |
+| Audio-Technica ATH-AD700X | ~2012 | ~$150–$200 | Open-back, wired | Airy presentation and excellent directional cues. Particularly useful for evaluating footsteps and positional audio. Limited deep sub-bass response. |
+| Beyerdynamic DT 990 PRO | Long-running (current) | ~$150–$180 | Open-back, wired | Bright treble response can reveal high-frequency artifacts, including occlusion-related muffling. May become fatiguing during long sessions. |
+
+## What to Avoid
+Avoid headphones that apply their own virtual surround processing or other spatial audio effects.
+These can interfere with A3D emulation testing by processing the audio a second time.
+
+| Headphone / Category | Reason to Avoid |
+|---|---|
+| SteelSeries Arctis series | Certain models include built-in DSP and virtual surround processing, potentially applying additional spatial processing to the emulated output. |
+| Razer BlackShark series | Models with virtual 7.1 processing can interfere with reference testing and introduce additional HRTF processing. |
+| Any 7.1 Virtual Surround headset | The headset's own HRTF processing can be layered on top of the A3D emulation, making it difficult to evaluate the emulator's actual output. |
+
+## Important Notes
+**Headphones are only one part of a valid A3D comparison setup.**
+
+For reliable results:
+- Disable Windows Sonic, Dolby Atmos, DTS Headphone:X, and other operating-system spatial audio processing.
+- Disable virtual surround and enhancement features in headphone software.
+- Use the same audio output configuration for both the original hardware and the emulation.
+- Match playback levels before performing comparisons.
+- Account for DAC, amplifier, and analog output differences.
+- Remember that headphone frequency response and individual HRTF characteristics affect perceived positional audio.
+
+A headphone with a neutral response is useful for identifying differences, but no headphone is completely acoustically transparent.
+
+---
+
 ## 4. How this fits into `thief-gold-prince-of-persia-3d`
 
 ### 4.1 Repo layout (proposed)
+```
 thief-gold-prince-of-persia-3d/
 ├── engine/ # the source-port engine (Thief Gold / PoP3D)
 ├── audio/
@@ -96,7 +153,7 @@ thief-gold-prince-of-persia-3d/
 │ ├── index.html # WASM shell
 │ └── netlify.toml # wasm MIME, COOP/COEP only if pthreads
 └── README.md
-
+```
  
 ### 4.2 The router interface (what the game calls)
 
