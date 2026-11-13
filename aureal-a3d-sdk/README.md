@@ -13,10 +13,9 @@ Based on community research and VOGONS documentation. The chip is what matters f
 
 | Card | Chip / Codec | Price (Used) | A3D 2.0 Support | Notes |
 | :--- | :--- | :--- | :--- | :--- |
-| **Aureal SQ2500 (SuperQuad)** | AU8830 (Aureal-built) | ~$40–$80 | Full | Often considered the "purest" card. Made by Aureal. Some later OEM revisions use different chips — verify before buying. |
+| **Aureal SQ2500 ** | AU8830 (Aureal-built) | ~$40–$80 | Full | Often considered the "purest" card. Made by Aureal. Some later OEM revisions use different chips — verify before buying. |
 | **Diamond Monster MX300** | AU8830A2 + SigmaTel STAC9708 | ~$40–$100 | Full | The most famous and documented card. **Heavily counterfeited** — fakes use the later BOAAAA chip and TriTech codec. Verify the AU8830A2 and STAC9708 before buying. |
 | **Turtle Beach Montego II** | AU8830 | ~$30–$70 | Full | Solid alternative. Functionally equivalent to the MX300 for A3D. Quadzilla version offers 4-channel output; Home Studio version has digital I/O. |
-| **Generic / Unbranded Vortex 2** | Varies | ~$10–$30 | Usually full | Avoid unless verified. Cheaper components, driver quirks, sometimes non-standard codecs. |
 
 ## Driver Notes
 
@@ -33,6 +32,12 @@ For a **reference machine** (driver tracing or Null Test):
 3. **Avoid**: Unverified MX300s and generic cards.
 
 The chip is what determines A3D 2.0 behavior. The card brand mostly affects analog output quality (relevant for Null Test) and driver compatibility.
+
+[Aureal Vortex 2 AU8830 Win9x/NT4](https://archive.org/details/vortex-au-8830)
+
+[Diamond Monster Sound MX300 v3.50J driver CD](https://archive.org/details/mx-300-350)
+
+[Buffalo SDP-AU30 (Aureal Vortex 2) Driver Disc](https://archive.org/details/sdpau-30-m-100)
 
 
 # A3D SDK Notes & Integration Plan for `thief-gold-prince-of-persia-3d`
