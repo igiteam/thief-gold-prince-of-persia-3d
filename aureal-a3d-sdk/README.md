@@ -13,7 +13,7 @@ Based on community research and VOGONS documentation. The chip is what matters f
 
 | Card | Chip / Codec | Price (Used) | A3D 2.0 Support | Notes |
 | :--- | :--- | :--- | :--- | :--- |
-| **Aureal SQ2500 ** | AU8830 (Aureal-built) | ~$40–$80 | Full | Often considered the "purest" card. Made by Aureal. Some later OEM revisions use different chips — verify before buying. |
+| **Aureal SQ2500** | AU8830 **B0** revision (Aureal-built) | ~$40–$80 | Full | Made by Aureal. Uses the later B0 chip revision. Coax digital out. Often considered the "purest" Aureal-built card. |
 | **Diamond Monster MX300** | AU8830A2 + SigmaTel STAC9708 | ~$40–$100 | Full | The most famous and documented card. **Heavily counterfeited** — fakes use the later BOAAAA chip and TriTech codec. Verify the AU8830A2 and STAC9708 before buying. |
 | **Turtle Beach Montego II** | AU8830 | ~$30–$70 | Full | Solid alternative. Functionally equivalent to the MX300 for A3D. Quadzilla version offers 4-channel output; Home Studio version has digital I/O. |
 
