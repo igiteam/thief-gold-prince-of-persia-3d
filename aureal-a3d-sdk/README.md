@@ -3,7 +3,7 @@ Aureal A3D is the landmark 3D audio technology which enables a realistic, natura
 
 | Official Aureal Logo | re-a3d-api Logo |
 | :---: | :---: |
-| ![Official Aureal A3D Logo](https://raw.githubusercontent.com/igiteam/aureal-a3d-sdk/refs/heads/main/Aureal_A3D_(logo).png) | ![re-a3d-api Logo](https://raw.githubusercontent.com/oxiKKK/re-a3d-api/main/assets/a3dlogo.png) |
+| ![Official Aureal A3D Logo](https://raw.githubusercontent.com/igiteam/aureal-a3d-sdk/refs/heads/main/Aureal_A3D_(logo).png) | <img src="https://raw.githubusercontent.com/oxiKKK/re-a3d-api/main/assets/a3dlogo.png" width="200" /> |
 
 A3D is the standard in PC system 3D sound, and is supported by many hardware platforms. This growing list of hardware products include Aureal’s own line of PC audio semiconductors - the Vortex PCI-based digital audio accelerator - as well as licensee products such as the Diamond MonsterSound, and Crystal SoundFusion.
 
