@@ -12,6 +12,8 @@ Notes on the archived Aureal A3D SDK and how an A3D-style audio backend would sl
 
 ---
 
+[![Aureal Vortex 2 driver fix Windows 7](https://img.youtube.com/vi/o7lK1E-kGok/hqdefault.jpg)](https://www.youtube.com/watch?v=o7lK1E-kGok)
+
 ## Reference Links
 
 ### Original Aureal Documentation
