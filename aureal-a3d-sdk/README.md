@@ -2,6 +2,7 @@
 Aureal A3D is the landmark 3D audio technology which enables a realistic, natural and immerse audio experience by surrounding the listener with sounds in all three dimensions using only a single pair of ordinary speakers or headphones. Using advanced HRTF (head related transfer function) algorithms, A3D allows for interactive positioning of individual sound streams and listeners in true 3D space.  Application developers can easily utilize this powerful audio technology via the A3D API - a straightforward extension of the Microsoft DirectSound API.
 
 ![https://raw.githubusercontent.com/igiteam/aureal-a3d-sdk/refs/heads/main/Aureal_A3D_(logo).png](https://raw.githubusercontent.com/igiteam/aureal-a3d-sdk/refs/heads/main/Aureal_A3D_(logo).png)
+![https://raw.githubusercontent.com/oxiKKK/re-a3d-api/main/assets/a3dlogo.png](https://raw.githubusercontent.com/oxiKKK/re-a3d-api/main/assets/a3dlogo.png)
 
 A3D is the standard in PC system 3D sound, and is supported by many hardware platforms. This growing list of hardware products include Aureal’s own line of PC audio semiconductors - the Vortex PCI-based digital audio accelerator - as well as licensee products such as the Diamond MonsterSound, and Crystal SoundFusion.
 
@@ -15,6 +16,7 @@ Notes on the archived Aureal A3D SDK and how an A3D-style audio backend would sl
 [![Aureal Vortex 2 driver fix Windows 7](https://img.youtube.com/vi/o7lK1E-kGok/hqdefault.jpg)](https://www.youtube.com/watch?v=o7lK1E-kGok)
 
 ## Reference Links
+- [re-a3d-api](https://github.com/oxiKKK/re-a3d-api) — C++ reconstruction of the A3D API (`a3dapi.dll` / `a3d.dll`)
 
 ### Original Aureal Documentation
 - [A3D 3.0 API Reference Guide (PDF)](https://vogonsdrivers.com/wrappers/files/Unsorted/a3dlive/a3d30ref.pdf) — Official Aureal programming manual, 1999/2000
@@ -22,7 +24,6 @@ Notes on the archived Aureal A3D SDK and how an A3D-style audio backend would sl
 - [SigmaTel STAC9708/11 AC'97 Codec Datasheet (PDF)](https://theretroweb.com/chip/documentation/stac9708-69d3c56065a7d499667042.PDF) — Full register map for the codec
 
 ### Software Reconstructions & Wrappers
-- [re-a3d-api](https://github.com/oxiKKK/re-a3d-api) — C++ reconstruction of the A3D API (`a3dapi.dll` / `a3d.dll`)
 - [A3dWallBuilder.cpp](https://raw.githubusercontent.com/oxiKKK/re-a3d-api/main/src/a3dapi/A3dWallBuilder.cpp) — Wall geometry reconstruction
 - [A3D-Live!](http://www.worknd.ru) — Original wrapper translating A3D calls to DirectSound3D (Dmitry Nesterenko, 2004)
 - [A3D-Live! on GitHub](https://github.com/worknd/A3D-Live)
