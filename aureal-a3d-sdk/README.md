@@ -12,6 +12,35 @@ Notes on the archived Aureal A3D SDK and how an A3D-style audio backend would sl
 
 ---
 
+## Reference Links
+
+### Original Aureal Documentation
+- [A3D 3.0 API Reference Guide (PDF)](https://vogonsdrivers.com/wrappers/files/Unsorted/a3dlive/a3d30ref.pdf) — Official Aureal programming manual, 1999/2000
+- [Aureal Vortex 2 (AU8830) Product Brief (PDF)](https://theretroweb.com/chip/documentation/dsa-593840-65982eff1af2d537237231.pdf) — Chip architecture overview
+- [SigmaTel STAC9708/11 AC'97 Codec Datasheet (PDF)](https://theretroweb.com/chip/documentation/stac9708-69d3c56065a7d499667042.PDF) — Full register map for the codec
+
+### Software Reconstructions & Wrappers
+- [re-a3d-api](https://github.com/oxiKKK/re-a3d-api) — C++ reconstruction of the A3D API (`a3dapi.dll` / `a3d.dll`)
+- [A3dWallBuilder.cpp](https://raw.githubusercontent.com/oxiKKK/re-a3d-api/main/src/a3dapi/A3dWallBuilder.cpp) — Wall geometry reconstruction
+- [A3D-Live!](http://www.worknd.ru) — Original wrapper translating A3D calls to DirectSound3D (Dmitry Nesterenko, 2004)
+- [A3D-Live! on GitHub](https://github.com/worknd/A3D-Live)
+- [A3D_REF.CPP](https://raw.githubusercontent.com/worknd/A3D-Live/main/A3D_REF.CPP) — Early reflections implementation
+
+### SDK Archives
+- [A3D SDK Mirror (sigmaco/a3d-sdk)](https://github.com/sigmaco/a3d-sdk) — Full SDK 1.2/2.0/3.1 archive
+- [VOGONS Vintage Driver Library — Aureal](https://www.vogons.org/viewtopic.php?t=77643) — Drivers, support files, demos
+
+### Community Discussion
+- [VOGONS: Fortex — A3D & XG/OPL3 Accelerator](https://www.vogons.org/viewtopic.php?t=77643) — Modern Vortex 2 + YMF744 combo card project
+- [VOGONS: Aureal 3D Emulation on a Modern System](https://www.vogons.org/viewtopic.php?t=63560)
+- [VOGONS: Topic 78197](https://www.vogons.org/viewtopic.php?t=78197)
+- [VOGONS: Topic 77643](https://www.vogons.org/viewtopic.php?t=77643)
+- [A3D Game List (archived, Vortex of Sound)](http://web.archive.org/web/20030212190019/http://www.vortexofsound.com/gamelist/gamelist-a3d.htm)
+
+### Linux Kernel (Register Reference)
+- [`sound/pci/au88x0/`](https://github.com/torvalds/linux/tree/master/sound/pci/au88x0) — ALSA driver, `au8830.h` contains partial register map reverse-engineered from `asp4core.vxd`
+  
+
 ## 1. What the SDK file confirms
 
 **A3D is an extension of DS3D, not a standalone API.** The key line:
