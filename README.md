@@ -28,7 +28,7 @@ A total conversion project that fuses the stealth-driven shadow gameplay and imm
 
 [![The Great 90s 3D Audio War: Creative Vs Aureal](https://img.youtube.com/vi/xu06xLYxmA0/maxresdefault.jpg)](https://www.youtube.com/watch?v=xu06xLYxmA0)
 
-[![Aureal Vortex A3D Demos Headphones Surround](https://img.youtube.com/vi/7Yc2pODiZgU/hqdefault.jpg)](https://www.youtube.com/watch?v=7Yc2pODiZgU)
+[![Aureal Vortex A3D Demos Headphones Surround](https://img.youtube.com/vi/giksyYfjw3c/hqdefault.jpg)](https://www.youtube.com/watch?v=giksyYfjw3c)
 
 
 ## Aureal A3D Audio 
