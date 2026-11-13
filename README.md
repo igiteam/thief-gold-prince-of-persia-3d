@@ -28,6 +28,9 @@ A total conversion project that fuses the stealth-driven shadow gameplay and imm
 
 [![The Great 90s 3D Audio War: Creative Vs Aureal](https://img.youtube.com/vi/xu06xLYxmA0/maxresdefault.jpg)](https://www.youtube.com/watch?v=xu06xLYxmA0)
 
+[![The Great 90s 3D Audio War: Creative Vs Aureal](https://img.youtube.com/vi/giksyYfjw3c/maxresdefault.jpg)](https://www.youtube.com/watch?v=giksyYfjw3c)
+
+
 ## Aureal A3D Audio 
 [https://github.com/igiteam/thief-gold-prince-of-persia-3d/blob/master/aureal-a3d-sdk/README.md](https://github.com/igiteam/thief-gold-prince-of-persia-3d/blob/master/aureal-a3d-sdk/README.md)
 
