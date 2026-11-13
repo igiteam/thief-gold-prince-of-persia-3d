@@ -16,6 +16,8 @@ A total conversion project that fuses the stealth-driven shadow gameplay and imm
 
 [![Prince of Persia 3D in-game](https://raw.githubusercontent.com/igiteam/thief-gold-prince-of-persia-3d/refs/heads/master/thief-gold-prince-of-persia-3d-ingame.jpg)](https://archive.org/details/Prince_of_Persia_3D_USA)
 
+[![Prince of Persia 3D walktrough](https://img.youtube.com/vi/_cal4mQnw6o/maxresdefault.jpg)](https://www.youtube.com/watch?v=_cal4mQnw6o)
+
 [![Prince of Persia DromEd](https://raw.githubusercontent.com/igiteam/thief-gold-prince-of-persia-3d/refs/heads/master/thief-gold-prince-of-persia-3d.png)](https://archive.org/details/Prince_of_Persia_3D_USA)
 
 [![Thief: The Dark Project — Aureal Vortex vs. Sound Blaster Live — 3D Audio/HRTF comparison — A3D/EAX](https://img.youtube.com/vi/zQb6eG1THhA/maxresdefault.jpg)](https://www.youtube.com/watch?v=zQb6eG1THhA)
